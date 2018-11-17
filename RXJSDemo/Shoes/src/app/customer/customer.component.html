@@ -1,0 +1,32 @@
+<ul *ngIf="customersObservable | async as customers else empty">
+    <li *ngFor="let customer of customers">
+        {{customer.name}}
+        {{customer.id}}
+        {{customer.email}}
+        {{customer.tel}}
+    </li> 
+</ul>
+<input type=text id="idval">
+<button (click)="getByID()">GET BY ID</button>
+
+<ul *ngIf="customerObs | async as customers else empty">
+    <li *ngFor="let customer of customers">
+        {{customer.name}}
+        {{customer.id}}
+        {{customer.email}}
+        {{customer.tel}}
+    </li> 
+</ul>
+<br><br><hr> 
+
+<input type=text id="ipid" placeholder="ID">
+<input type=text id="ipname" placeholder="NAME">
+<input type=text id="ipemail" placeholder="EMAIL">
+<input type=text id="iptel" placeholder="TEL"><br>
+<button (click)="addCustomer()">ADD CUSTOMER</button>
+<button (click)="delCustomer()">DELETE CUSTOMER</button>
+<button (click)="updateCustomer()">UPDATE CUSTOMER</button>
+
+
+        {{message}}
+<ng-template #empty> No Customers Yet </ng-template>
